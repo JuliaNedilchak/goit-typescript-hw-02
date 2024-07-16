@@ -38,7 +38,8 @@ const customStyles: ReactModal.Styles = {
   },
 };
 ReactModal.setAppElement("#root");
-const App = () => {
+
+const App: React.FC = () => {
   const [photos, setPhotos] = useState<Photo[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);

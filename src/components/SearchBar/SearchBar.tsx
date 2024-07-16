@@ -1,12 +1,16 @@
 import { Formik, Form, Field } from "formik";
+import React from "react";
 import toast from "react-hot-toast";
 
 const FORM_INITIAL_VALUES = {
   photoSearch: "",
 };
+interface SearchBarProps {
+  onSearchQuery: (photoSearch: string) => void;
+}
 
-const SearchBar = ({ onSearchQuery }) => {
-  const submitForm = (values) => {
+const SearchBar: React.FC<SearchBarProps> = ({ onSearchQuery }) => {
+  const submitForm = (values: typeof FORM_INITIAL_VALUES) => {
     if (!values.photoSearch) {
       toast.error("you cant submit an empty blank!");
       return;
